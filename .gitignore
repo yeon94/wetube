@@ -1,4 +1,5 @@
 node_modules
+node_modules
 
 # Logs
 logs
@@ -110,5 +111,7 @@ dist
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
-
 package-lock.json
+uploads
+static 
+build

@@ -37,9 +37,9 @@
     "pug": "^2.0.4",
     "rd": "^2.0.1",
     "sass-loader": "^8.0.2",
+    "shx": "^0.3.2",
     "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11",
-    "shx": "^0.3.2"
+    "webpack-cli": "^3.3.11"
   },
   "author": "YEON94",
   "scripts": {

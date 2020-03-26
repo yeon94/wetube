@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Cloning Wetube with Vanila and NodeJS",
   "dependencies": {
+    "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
     "@babel/node": "^7.8.4",
     "@babel/polyfill": "^7.8.7",
@@ -55,7 +56,6 @@
     "prestart": "npm run build"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.10.0",

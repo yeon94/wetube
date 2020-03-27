@@ -1,6 +1,7 @@
 import passport from "passport";
 import routes from "../routes";
 import User from "../models/User";
+import Video from "../models/Video";
 
 export const getJoin = (req, res) => {
   res.render("join", { pageTitle: "Join" });
@@ -97,9 +98,9 @@ export const userDetail = async (req, res) => {
     params: { id }
   } = req;
   try {
+    const videos = await Video.find({}).sort({ _id: -1 });
     const user = await User.findById(id).populate("videos");
-    console.log(user);
-    res.render("userDetail", { pageTitle: "User Detail", user });
+    res.render("userDetail", { pageTitle: "User Detail", user, videos });
   } catch (error) {
     res.redirect(routes.home);
   }

@@ -1,5 +1,5 @@
 .header {
-  background-color: $red;
+  background-color: $main-orange;
   margin-bottom: 50px;
   .header__wrapper {
     padding: 5px 0px;
@@ -35,7 +35,7 @@
         input {
           padding: 7px 10px;
           width: 100%;
-          border-radius: 5px;
+          border-radius: 0px;
           font-size: 14px;
           color: $black;
           font-weight: 600;

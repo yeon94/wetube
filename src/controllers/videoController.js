@@ -63,6 +63,8 @@ export const videoDetail = async (req, res) => {
     const video = await Video.findById(id)
       .populate("creator")
       .populate("comments");
+    console.log(req.user);
+    console.log(video.creator);
     res.render("videoDetail", { pageTitle: video.title, video });
   } catch (error) {
     res.redirect(routes.home);
@@ -79,7 +81,7 @@ export const getEditVideo = async (req, res) => {
   try {
     const video = await Video.findById(id);
 
-    if (video.creator.objectId !== req.user.id) {
+    if (video.creator !== req.user.id) {
       throw Error();
     } else {
       res.render("editVideo", { pageTitle: `Edit ${video.title}`, video });
@@ -111,10 +113,10 @@ export const deleteVideo = async (req, res) => {
   } = req;
   try {
     const video = await Video.findById(id);
-    if (video.creator !== req.user.id) {
-      throw Error();
-    } else {
+    if (video.creator === req.user.id) {
       await Video.findOneAndRemove({ _id: id });
+    } else {
+      throw Error();
     }
   } catch (error) {
     console.log(error);
